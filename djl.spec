@@ -7,6 +7,7 @@ Group:      Games/Other
 URL:        http://djl-linux.org/
 Source0:    http://en.djl-linux.org/maj_djl/archives/%{name}-%{version}.tar.gz
 Patch0:	    djl-1.2.11-path.patch
+Patch1:     djl-1.2.11-fix-shebang.patch
 BuildRequires:	imagemagick
 Requires:   python-qt4 >= 4
 Requires:   python >= 2.5, python < 3
@@ -29,9 +30,12 @@ developers via a web page (http://djl.jeuxlinux.fr/djl_addgame_en.php).
 %prep
 %setup -q -n %name
 %patch0 -p0 -b .path
+%patch1 -p0 
 rm djl/.eric4project/ -Rf
 mv djl/djlnotes.txt djl/Journal*.txt .
 chmod a-x COPYING
+chmod a-x Journal_en.txt
+chmod a-x Journal.txt
 
 %build
 
@@ -78,7 +82,7 @@ rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root)
-%doc COPYING LIESMICH LISEZMOI README
+%doc COPYING LIESMICH LISEZMOI README djlnotes.txt Journal.txt Journal_en.txt
 %{_gamesbindir}/djl
 %{_gamesdatadir}/djl
 %{_datadir}/applications/mandriva-%{name}.desktop 
