@@ -33,6 +33,7 @@ developers via a web page (http://djl.jeuxlinux.fr/djl_addgame_en.php).
 %patch1 -p0 
 rm djl/.eric4project/ -Rf
 rm -f djl/djlnotes.txt #remove empty file put in the archive by error, according to the dev
+mv djl/Journal_en.txt djl/Journal.txt .
 chmod a-x COPYING
 chmod a-x Journal_en.txt
 chmod a-x Journal.txt
