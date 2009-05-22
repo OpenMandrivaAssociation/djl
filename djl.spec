@@ -32,7 +32,7 @@ developers via a web page (http://djl.jeuxlinux.fr/djl_addgame_en.php).
 %patch0 -p0 -b .path
 %patch1 -p0 
 rm djl/.eric4project/ -Rf
-mv djl/djlnotes.txt djl/Journal*.txt .
+rm -f djl/djlnotes.txt #remove empty file put in the archive by error, according to the dev
 chmod a-x COPYING
 chmod a-x Journal_en.txt
 chmod a-x Journal.txt
@@ -82,7 +82,7 @@ rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root)
-%doc COPYING LIESMICH LISEZMOI README djlnotes.txt Journal.txt Journal_en.txt
+%doc COPYING LIESMICH LISEZMOI README Journal.txt Journal_en.txt
 %{_gamesbindir}/djl
 %{_gamesdatadir}/djl
 %{_datadir}/applications/mandriva-%{name}.desktop 
