@@ -1,6 +1,6 @@
 Name:       djl
 Version:    1.2.11
-Release:    %mkrel 2
+Release:    %mkrel 3 
 Summary:    A game manager inspired by Steam from Valve software
 License:    GPLv3+
 Group:      Games/Other
@@ -8,6 +8,7 @@ URL:        http://djl-linux.org/
 Source0:    http://en.djl-linux.org/maj_djl/archives/%{name}-%{version}.tar.gz
 Patch0:	    djl-1.2.11-path.patch
 Patch1:     djl-1.2.11-fix-shebang.patch
+Patch2:	    djl-1.2.11-hide-add-menu-entry-button.patch
 BuildRequires:	imagemagick
 Requires:   python-qt4 >= 4
 Requires:   python >= 2.5, python < 3
@@ -30,7 +31,9 @@ developers via a web page (http://djl.jeuxlinux.fr/djl_addgame_en.php).
 %prep
 %setup -q -n %name
 %patch0 -p0 -b .path
+# no -b option otherwise the backup file still breaks automatic requires
 %patch1 -p0 
+%patch2 -p0 -b .no-add-desktop-file-button
 rm djl/.eric4project/ -Rf
 rm -f djl/djlnotes.txt #remove empty file put in the archive by error, according to the dev
 mv djl/Journal_en.txt djl/Journal.txt .
@@ -58,7 +61,7 @@ mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
 Name=DJL
-Comment=Game manager
+Comment=Game manager with lots of games available
 Exec=%{_gamesbindir}/djl
 Icon=%{name}
 Terminal=false
