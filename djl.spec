@@ -1,11 +1,12 @@
 Name:       djl
-Version:    1.2.14
-Release:    %mkrel 1
+Version:    1.2.15
+Release:    %mkrel 0.dev2.1
 Summary:    A game manager inspired by Steam from Valve software
 License:    GPLv3+
 Group:      Games/Other
 URL:        http://djl-linux.org/
-Source0:    http://en.djl-linux.org/maj_djl/archives/%{name}-%{version}.tar.gz
+#Source0:    http://en.djl-linux.org/maj_djl/archives/%{name}-%{version}.tar.gz
+Source0:    http://en.djl-linux.org/maj_djl/archives/%{name}-%{version}-dev2.tar.gz
 Patch0:	    djl-1.2.11-path.patch
 Patch1:	    djl-1.2.12-hide-add-menu-entry-button.patch
 BuildRequires:	imagemagick
