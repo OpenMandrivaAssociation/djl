@@ -1,5 +1,5 @@
 Name:       djl
-Version:    1.2.18
+Version:    1.2.19
 #Release:    %mkrel 0.dev2.1
 Release:    %mkrel 1
 Summary:    A game manager inspired by Steam from Valve software
