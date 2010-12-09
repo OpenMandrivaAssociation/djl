@@ -1,6 +1,6 @@
 Name:       djl
 Version:    1.2.20
-Release:    %mkrel 1
+Release:    %mkrel 2
 Summary:    A game manager inspired by Steam from Valve software
 License:    GPLv3+
 Group:      Games/Other
