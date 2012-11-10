@@ -1,0 +1,16 @@
+Index: djl/configuration.py
+===================================================================
+--- djl/configuration.py
++++ djl/configuration.py	2009-05-24 20:53:15.000000000 +0200
+@@ -651,7 +651,10 @@
+         self.b_raccourci = QtGui.QPushButton(self.tab)
+         self.b_raccourci.setGeometry(QtCore.QRect(25,410,400,27))
+         self.b_raccourci.setObjectName("b_raccourci")
+-        #self.b_raccourci.hide()
++        # (stormi@mandriva.org)
++        # Hide the button because we already have a desktop file, and by the way
++        # it doesn't work with our installation path
++        self.b_raccourci.hide();
+ 
+         self.b_valider = QtGui.QPushButton(self.centralwidget)
+         self.b_valider.setGeometry(QtCore.QRect(110,475,106,27))
