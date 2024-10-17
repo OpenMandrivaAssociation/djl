@@ -4,7 +4,7 @@ Release:    %mkrel 2
 Summary:    A game manager inspired by Steam from Valve software
 License:    GPLv3+
 Group:      Games/Other
-URL:        http://djl-linux.org/
+URL:        https://djl-linux.org/
 Source0:    http://en.djl-linux.org/maj_djl/archives/%{name}-%{version}.tar.gz
 #Source0:    http://en.djl-linux.org/dev/maj_djl/archives/%{name}-%{version}-dev3.tar.gz
 Patch0:	    djl-1.2.11-path.patch
